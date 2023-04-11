@@ -19,5 +19,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${DSA_CPP_INSTALL_BIN_DIR})
 include_directories(${DSA_CPP_INSTALL_INCLUDE_DIR})
 #include_directories(${DIVISION_HEADERS_DIR})
 
-add_subdirectory(src/ArrayLists)
+add_subdirectory(src/ArrayList)
 # add_subdirectory(test)
