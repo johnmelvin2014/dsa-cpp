@@ -14,7 +14,6 @@ class ArrayList {
 
   public:
     ArrayList();
-    ~ArrayList();
     ArrayList(const ArrayList &other);
 
     void add_at_index(unsigned int index, T data);
@@ -35,3 +34,21 @@ class ArrayList {
   private:
     void copy_to_expanded_backing_array();
 };
+
+template <typename T>
+ArrayList<T>::ArrayList()
+    : size{},
+      current_capacity{ArrayList::INITIAL_CAPACITY},
+      backing_array{std::make_unique<T>(ArrayList::INITIAL_CAPACITY)} {}
+
+template <typename T>
+void ArrayList<T>::copy_to_expanded_backing_array() {
+    const int old_capacity{current_capacity};
+    std::unique_ptr<T> old_backing_array = std::make_unique(std::move(backing_array));
+
+    current_capacity *= 2;
+    backing_array = std::make_unique<T>(current_capacity);
+    for (int i{}; i < old_capacity; ++i) {
+        backing_array[i] = std::move(old_backing_array[i]);
+    }
+}
