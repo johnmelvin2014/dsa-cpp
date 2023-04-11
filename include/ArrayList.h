@@ -29,6 +29,7 @@ class ArrayList {
     void clear();
 
     unsigned int get_size();
+    unsigned int get_current_capacity();
     std::unique_ptr<T> get_backing_array();
 
   private:
@@ -40,6 +41,16 @@ ArrayList<T>::ArrayList()
     : size{},
       current_capacity{ArrayList::INITIAL_CAPACITY},
       backing_array{std::make_unique<T>(ArrayList::INITIAL_CAPACITY)} {}
+
+template <typename T>
+unsigned int ArrayList<T>::get_size() {
+    return size;
+}
+
+template <typename T>
+unsigned int ArrayList<T>::get_current_capacity() {
+    return current_capacity;
+}
 
 template <typename T>
 void ArrayList<T>::copy_to_expanded_backing_array() {

@@ -1,12 +1,10 @@
 #include "ArrayList.h"
 #include "gtest/gtest.h"
 
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions) {
-    // Expect two strings not to be equal.
-    EXPECT_STRNE("hello", "world");
-    // Expect equality.
-    EXPECT_EQ(7 * 6, 42);
+TEST(ArrayListConstruction, ParmeterSetting) {
+    ArrayList<int> array_list{};
+    EXPECT_EQ(array_list.get_size(), 0);
+    EXPECT_EQ(array_list.get_current_capacity(), array_list.INITIAL_CAPACITY);
 }
 
 int main(int argc, char **argv) {
