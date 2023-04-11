@@ -8,6 +8,8 @@ add_subdirectory(googletest)
 
 set(DSA_CPP_TEST_DIR, ${DSA_CPP_ROOT_DIR}/tests)
 
+set(CMAKE_BUILD_TYPE Debug)
+
 include_directories(${DSA_CPP_INCLUDE_DIR})
 include_directories(${googletest/googletest/include})
 
