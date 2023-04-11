@@ -16,6 +16,7 @@ TEST(ArrayListAddAtIndex, BasicAddAtIndex) {
     array_list.add_at_index(0, 0);
 
     EXPECT_EQ(array_list.get_size(), 5);
+    EXPECT_EQ(array_list.get_current_capacity(), array_list.INITIAL_CAPACITY);
     int expected[]{0, 1, 2, 3, 4};
     for (int i{}; i < 5; ++i) {
         int actual{array_list.get(i)};
