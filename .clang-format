@@ -3,7 +3,7 @@
 BasedOnStyle: LLVM
 IndentWidth: 4
 # Must be 80 characters or less!
-ColumnLimit: 80
+ColumnLimit: 88
 # does (int) x instead of (int)x
 SpaceAfterCStyleCast: true
 # spaces, not tabs!
@@ -13,10 +13,22 @@ AllowShortIfStatementsOnASingleLine: false
 #
 AlignTrailingComments: true
 SpacesBeforeTrailingComments: 3
+
 # change the next line to All for Alistair's textbook style
-AlwaysBreakAfterReturnType: TopLevelDefinitions
+AlwaysBreakAfterReturnType: None
+
 #  #define SHORT_NAME       42
 #  #define LONGER_NAME      0x007f   # does nice spacing for macros
 AlignConsecutiveMacros: true
+
 # use \n instead of \r\n
 UseCRLF: false
+
+# function return types same line as definition
+AlwaysBreakAfterDefinitionReturnType: None
+
+# don't shorten functions to one line
+AllowShortFunctionsOnASingleLine: Empty
+
+# break after templates
+AlwaysBreakTemplateDeclarations: Yes
