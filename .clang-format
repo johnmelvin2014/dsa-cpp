@@ -32,3 +32,6 @@ AllowShortFunctionsOnASingleLine: Empty
 
 # break after templates
 AlwaysBreakTemplateDeclarations: Yes
+
+# member initializer lists
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
