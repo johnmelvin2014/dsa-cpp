@@ -5,8 +5,9 @@ project(dsa-cpp)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Werror -std=c++2a")
 
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
-set(DSA_CPP_SRC_DIR ${PROJECT_SOURCE_DIR}/src)
 
+set(DSA_CPP_ROOT_DIR ${PROJECT_SOURCE_DIR})
+set(DSA_CPP_SRC_DIR ${PROJECT_SOURCE_DIR}/src)
 set(DSA_CPP_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 set(GOOGLETEST_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/tests/googletest/googletest/include)
 

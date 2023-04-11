@@ -11,5 +11,6 @@ TEST(HelloTest, BasicAssertions) {
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
+    ArrayList<int> array_list;
     return RUN_ALL_TESTS();
 }
