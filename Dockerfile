@@ -17,7 +17,7 @@ RUN apt-get -y install llvm clang g++ gcc gdb lldb git make cmake clangd clang-t
 RUN python3 -m pip install black flake8 mypy reorder-python-imports
 
 WORKDIR /home/workspace
-ENV HOME /home/workspace
+ENV HOME /workspaces/dsa-cpp
 ENV LD_LIBRARY_PATH /usr/local/lib
 RUN git clone https://github.com/magicmonty/bash-git-prompt.git /home/workspace/.bash-git-prompt --depth=1
 
