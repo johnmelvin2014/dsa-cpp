@@ -25,26 +25,7 @@ TEST(ArrayListAddAtIndex, BasicAddAtIndex) {
     }
 }
 
-TEST(SantizerTest, MemoryLeak) {
-    ArrayList<int> *array_list{new ArrayList<int>()};
-    ASSERT_TRUE(array_list != nullptr);
-}
-
-TEST(SanitizerTest, AddressLeak) {
-    ArrayList<int> *array_list{new ArrayList<int>()};
-    ASSERT_TRUE(array_list != nullptr);
-    delete array_list;
-    std::cout << array_list->get_current_capacity();
-}
-
-TEST(SanitizerTest, UndefinedBehavior) {
-    int k = std::numeric_limits<int>::max();
-    int overflow = k + 1;
-    std::cout << "Overflow int is " << overflow;
-}
-
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
-    ArrayList<int> array_list;
     return RUN_ALL_TESTS();
 }
