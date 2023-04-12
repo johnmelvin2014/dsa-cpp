@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(test_ArrayList)
+project(tests)
 
 set(DSA_CPP_TESTING_DIR ${DSA_CPP_ROOT_DIR}/tests)
 set(DSA_CPP_TESTING_BIN_DIR ${DSA_CPP_TESTING_DIR}/bin)
@@ -18,9 +18,4 @@ link_libraries(-fsanitize=leak,address,undefined)
 
 include_directories(${DSA_CPP_INCLUDE_DIR})
 
-set(SOURCE_FILES test_ArrayList.cpp)
-add_executable(test_ArrayList ${SOURCE_FILES})
-target_link_libraries(test_ArrayList GTest::gtest_main)
-
-include(GoogleTest)
-gtest_discover_tests(test_ArrayList)
+add_subdirectory(ArrayList)
