@@ -13,6 +13,8 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 set(CMAKE_BUILD_TYPE Debug)
+add_compile_options(-fsanitize=leak,address,undefined -fno-omit-frame-pointer -fno-common -O1)
+link_libraries(-fsanitize=leak,address,undefined)
 
 include_directories(${DSA_CPP_INCLUDE_DIR})
 
