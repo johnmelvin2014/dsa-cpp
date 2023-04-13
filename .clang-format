@@ -35,3 +35,7 @@ AlwaysBreakTemplateDeclarations: Yes
 
 # member initializer lists
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
+
+# align pointers and references next to types
+#ReferenceAlignment: Left
+PointerAlignment: Left
