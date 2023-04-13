@@ -16,17 +16,19 @@ class ArrayList {
 
   public:
     ArrayList();
-    ArrayList(const ArrayList &other);
+    ArrayList(const ArrayList& other);
 
     void add_at_index(int index, T data);
     void add_at_front(T data);
     void add_to_back(T data);
 
-    T &remove_at_index(int index);
-    T &remove_from_front();
-    T &remove_from_back();
+    T& remove_at_index(int index);
+    T& remove_from_front();
+    T& remove_from_back();
 
-    T &get(int index);
+    T& get(int index);
+    T& operator[](int index);
+
     bool is_empty();
     void clear();
 
@@ -61,10 +63,15 @@ void ArrayList<T>::add_at_index(int index, T data) {
 }
 
 template <typename T>
-T &ArrayList<T>::get(int index) {
+T& ArrayList<T>::get(int index) {
     validateIndexInRange(index);
 
     return backing_array[index];
+}
+
+template <typename T>
+T& ArrayList<T>::operator[](int index) {
+    return get(index);
 }
 
 template <typename T>

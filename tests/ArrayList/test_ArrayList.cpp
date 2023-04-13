@@ -1,6 +1,7 @@
 #include "ArrayList.h"
 #include "gtest/gtest.h"
 #include <limits>
+#include <stdexcept>
 
 TEST(ArrayListConstruction, ParmeterSetting) {
     ArrayList<int> array_list{};
@@ -25,7 +26,22 @@ TEST(ArrayListAddAtIndex, BasicAddAtIndex) {
     }
 }
 
-int main(int argc, char **argv) {
+TEST(ArrayListAddAtIndex, AddAtIndexLessThanZeroFails) {
+    ArrayList<int> array_list;
+    array_list.add_at_index(0, 1);
+    array_list.add_at_index(0, 0);
+    EXPECT_THROW(array_list.add_at_index(-1, -1), std::out_of_range);
+}
+
+TEST(ArrayListAddAtIndex, AddAtIndexGreaterThanSizeFails) {
+    ArrayList<int> array_list;
+    array_list.add_at_index(0, 1);
+    array_list.add_at_index(0, 0);
+    array_list.add_at_index(2, 2);
+    EXPECT_THROW(array_list.add_at_index(4, 4), std::out_of_range);
+}
+
+int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
